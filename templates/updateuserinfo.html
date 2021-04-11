@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Update User Information</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/updateuserinfo.css')}}">
+<style>
+	/* Add padding to containers */
+	.container {
+		padding: 16px;
+  		background: none;
+	}
+	h1, p, label {
+  		color: grey;
+	}
+    * {
+        box-sizing: border-box;
+    }
+    /* Full-width input fields */
+    input[type=text], input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+    }
+
+    input[type=text]:focus, input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+</style>	
+{% endblock %}
+
+{% block content %}
+{% include "_getflashmsgshelpers.html" %}
+{% from "_formhelpers.html" import render_field %}
+<form method="POST" action="">
+	<div class="container">
+		<h1>Update User Information</h1>
+		{{ form.hidden_tag() }}
+		<div class="form-group">
+        	<label for="name"><b>Username</b></label>
+        	{{ render_field(form.username) }}
+    	</div>
+
+    	<div class="form-group">
+        	<label for="email"><b>Email</b></label>
+        	{{ render_field(form.email) }}
+        </div>
+
+        <div class="form-group">
+        	<label for="pwd"><b>Password</b></label>
+        	{{ render_field(form.password) }}
+        </div>
+
+        <div class="form-group">
+        	<label for="pwd-repeat"><b>Password (Confirm)</b></label>
+        	{{ render_field(form.confirm) }}
+        </div>
+
+        <div class="form-group">
+            <label for="address"><b>Address</b></label>
+            {{ render_field(form.address) }}
+        </div>
+
+        <div class="form-group">
+            <label for="district"><b>Region</b></label>
+            {{ render_field(form.region) }}
+        </div>
+
+        <div class="form-group">
+            <label for="phoneNo"><b>Phone Number</b></label>
+            {{ render_field(form.phoneNo) }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+{% endblock %}

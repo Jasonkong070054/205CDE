@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>View User Information</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<h1>User Information</h1>
+	<p>User {{ session['uname'] }}</p>
+	<table class="table table-dark table-striped">
+		<thead>
+			<tr>
+		      	<th>Username</th>
+		      	<th>Email</th>
+		      	<th>Address</th>
+		      	<th>Region</th>
+		      	<th>Phone Number</th>
+		    </tr>
+		</thead>
+		<tbody>
+			{% for row in result %}
+		   	<tr>
+		      	<td>{{row[1]}}</td>
+		      	<td>{{row[2]}}</td>
+		      	<td>{{row[4]}}</td>
+		      	<td>{{row[5]}}</td>
+		      	<td>{{row[6]}}</td>
+		    </tr>
+		    {% endfor %}
+		</tbody>		
+	</table>
+</div>
+
+{% endblock %}

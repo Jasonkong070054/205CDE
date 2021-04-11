@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Reply Page</title>
+<style>
+	input[type=text], input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+    }
+
+    input[type=text]:focus, input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+{% include "_getflashmsgshelpers.html" %}
+{% from "_formhelpers.html" import render_field %}
+<form method="POST" action="">
+	<div class="container">
+		{% for row in result%}
+		<h3> Question</h3>
+		<p>{{row[2]}}</p>
+		{% endfor %}
+		<br>
+		<h3>Please enter your reply inside the following box</h3>
+		{{ form.hidden_tag() }}
+		<div class="form-group">
+			<label for="reply"><b>Reply</b></label>
+			{{ render_field(form.reply) }}
+		</div>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</div>
+</form>
+
+{% endblock %}

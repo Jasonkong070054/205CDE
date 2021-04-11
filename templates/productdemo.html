@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Product</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/product.css')}}">
+<style>
+	h2 {
+		color: grey;
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+{% include "_getflashmsgshelpers.html" %}
+<div class="product_content">
+	<h2 class="product_brand">Logitech</h2>
+	<div class="row">
+        <div class="card col-md-5 col-sm-12" style="width: 20rem; margin: 20px 20px 24px 0; padding: 20px 0 0 0;">
+            <img src="{{ url_for('static',filename='img/Logitech_ProX.jpg')}}" alt="image" class="card-img-top zoom" 
+            style="background-repeat: none;
+            background-size: cover;
+            height: 300px;
+            width:100%; ">
+            <div class="card-body">
+                <h4 class="card-title">Pro X Wireless Lightspeed Gaming Headset</h4>
+                <p class="card-text">DESIGNED WITH PROS. ENGINEERED TO WIN.</p>
+                <p>Step up to the pro-grade communications and precision audio you need to win, all with the freedom and mobility of LIGHTSPEED wireless.</p>
+                <a href="{{ url_for('product_detail')}}" class="btn btn-primary">See Details</a>
+            </div>
+        </div>
+        <div class="card col-md-5 col-sm-12" style="width: 20rem; margin: 20px 20px 24px 0; padding: 20px 0 0 0;">
+            <img src="#" alt="image" class="card-img-top zoom" 
+            style="background-repeat: none;
+            background-size: cover;
+            height: 300px;
+            width:100%; ">
+            <div class="card-body">
+                <h4 class="card-title"></h4>
+                <p class="card-text"></p>
+                <a href="#" class="btn btn-primary"></a>
+            </div>
+        </div>
+        <div class="card col-md-5 col-sm-12" style="width: 20rem; margin: 20px 20px 24px 0; padding: 20px 0 0 0;">
+            <img src="{{ url_for('static',filename='img/Logitech_ProX.jpg')}}" alt="image" class="card-img-top zoom" 
+            style="background-repeat: none;
+            background-size: cover;
+            height: 300px;
+            width: 100%; ">
+            <div class="card-body">
+                <h4 class="card-title">Pro X Wireless Lightspeed Gaming Headset</h4>
+                <p class="card-text">DESIGNED WITH PROS. ENGINEERED TO WIN.</p>
+                <p>Step up to the pro-grade communications and precision audio you need to win, all with the freedom and mobility of LIGHTSPEED wireless.</p>
+                <a href="#" class="btn btn-primary">See Details</a>
+            </div>
+        </div>
+        <div class="card col-md-5 col-sm-12" style="width: 20rem; margin: 20px 20px 24px 0; padding: 20px 0 0 0;">
+            <img src="{{ url_for('static',filename='img/Logitech.jpg')}}" alt="image" class="card-img-top zoom" 
+            style="background-repeat: none;
+            background-size: cover;
+            height: 300px;
+            width: 100%; ">
+            <div class="card-body">
+                <h4 class="card-title">Pro X Wireless Lightspeed Gaming Headset</h4>
+                <p class="card-text">DESIGNED WITH PROS. ENGINEERED TO WIN.</p>
+                <p>Step up to the pro-grade communications and precision audio you need to win, all with the freedom and mobility of LIGHTSPEED wireless.</p>
+                <a href="#" class="btn btn-primary">See Details</a>
+            </div>
+        </div>
+    </div>
+    <h2 class="product_brand">Razer</h2>
+    <div class="row">
+        <div class="card col-md-5 col-sm-12" style="width: 20rem; margin: 20px 0 24px 0; padding: 20px 0 0 0;">
+            <img src="{{ url_for('static',filename='img/Razer.jpg')}}" alt="image" class="card-img-top zoom"
+            style="background-repeat: none;
+            background-size: cover;
+            height: 300px;
+            width: 100%; ">
+            <div class="card-body">
+                <h4 class="card-title">Razer Kraken X for Console</h4>
+                <p class="card-text">Wired Console Gaming Headset</p>
+                <ul>
+                	<li>Clear & Accurate Positional Audio</li>
+                	<li>Ultra-Light Ergonomic Build at 250g</li>
+                	<li>Crystal Clear Communication</li>
+                </ul>
+                <a href="#" class="btn btn-primary">See Details</a>
+            </div>
+        </div>
+    </div>
+    <h2 class="product_brand">HyperX</h2>
+    <div class="row">
+        <div class="card col-md-5 col-sm-12" style="width: 20rem; margin: 20px 0 24px 0; padding: 20px 0 0 0;">
+            <img src="{{ url_for('static',filename='img/HyperX.jpg')}}" alt="image" class="card-img-top zoom"
+            style="background-repeat: none;
+            background-size: cover;
+            height: 300px;
+            width: 100%; ">
+            <div class="card-body">
+                <h4 class="card-title">HyperX Cloud II Wireless</h4>
+                <p class="card-text">The HyperX Cloud was built to be an ultra-comfortable gaming headset with amazing sound. We put a lot of thought into the details of our HyperX signature memory foam, the premium leatherette, clamping force, and weight distribution to create a headset that’s comfortable through long gaming sessions.</p>
+                <a href="#" class="btn btn-primary">See Details</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

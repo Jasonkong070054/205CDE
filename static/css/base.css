@@ -1,0 +1,30 @@
+/*Broundground set up*/
+*{
+	margin: 0;
+	padding: 0;
+}
+
+/* Navbar */
+.navbar {
+	width: 100%
+	margin: auto;
+	padding: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.navbar h2{
+	color: grey;
+	margin: auto;
+	margin-left: 15px;
+}
+.navbar ul li{
+	display: inline-block;
+	margin-right: 10px;
+}
+.footer{
+	position: center;
+	left: 0
+	bottom: 0;
+	width: 100%;
+}

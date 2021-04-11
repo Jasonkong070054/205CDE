@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Login</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css')}}">
+<style>
+	.container {
+		padding: 16px;
+  		background: none;
+	}
+	h1, p, label{
+  		color: grey;
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+{% include "_getflashmsgshelpers.html" %}
+{% from "_formhelpers.html" import render_field %}
+<form method="POST" action="">
+	<div class="container">
+		<h1>Login</h1>
+		{{ form.hidden_tag() }}
+		<div class="form-group">
+	    	<label for="uname"><b>Username</b></label>
+	    	{{ render_field(form.username) }}
+	    </div>
+	    <div class="form-group">
+	    	<label for="pwd"><b>Password</b></label>
+	    	{{ render_field(form.password) }}
+	    </div>
+	    <div class="msg">{{ msg }}</div>
+
+	    <button type="submit" class="btn btn-primary">Login</button>
+    </div>
+  	<div class="container login">
+    	<p>Still not a member? <a href="{{ url_for('register')}}">Go register</a></p>
+  	</div>
+  	<div class="container forget-pwd">
+  		<p>Forgot <a href="#">password?</a></p>
+  	</div>
+</form>
+
+{% endblock %}

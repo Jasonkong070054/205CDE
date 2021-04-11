@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Home</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css')}}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+<h1>Welcome to Records!</h1>
+<h2>Here is the gaming headsets that we are selling!</h2>
+<div class="container">
+    <div id="image" class="carousel slide" data-ride="carousel">
+            <!--indicators -->
+        <div class="carousel-indicators">
+            <button data-target="image" data-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button data-target="image" data-slide-to="1" aria-label="Slide 2"></button>
+            <button data-target="image" data-slide-to="2" aria-label="Slide 3"></button>
+            <button data-target="image" data-slide-to="2" aria-label="Slide 4"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{ url_for('static',filename='img/Logitech.jpg')}}" alt="Logitech Gaming Headset" width="1100" height="600">
+                <div class="carousel-caption d-none d-md-block">
+        			<h5>Logitech</h5>
+        			<p>Play at your peak with the highest performance gaming equipment from Logitech G.</p>
+      			</div>
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('static',filename='img/Razer.jpg')}}" alt="Razer Gaming Headset" width="1100" height="600">
+                <div class="carousel-caption d-none d-md-block">
+        			<h5>Razer</h5>
+        			<p>With Razer lethal line-up of advanced headsets and speakers, experience clear, powerful audio that builds incredible soundscapes for a new level of immersion, and gain the competitive edge with next-gen surround sound.</p>
+      			</div>
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('static',filename='img/HyperX.jpg')}}" alt="HyperX Gaming Headset" width="1100" height="600">
+                <div class="carousel-caption d-none d-md-block">
+        			<h5>HyperX</h5>
+        			<p>We're all gamers.</p>
+      			</div>
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('static',filename='img/Steelseries.jpg')}}" alt="Steelseries Gaming Headset" width="1100" height="600">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Steelseries</h5>
+                    <p>For Glory.</p>
+                </div>
+            </div>
+        </div>
+    <div>
+        <button href="#image" class="carousel-control-prev" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button href="#image" class="carousel-control-next" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</div>
+<br>
+<h1>Time To Have A Useful Gaming Headset!</h1>
+<p>Buy a great headset to become a better gamer. -v-</p>
+<a href="{{ url_for('product')}}" type="button"class="btn btn-lg btn-danger">Explore Now</a>
+{% endblock %}

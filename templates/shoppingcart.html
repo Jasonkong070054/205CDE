@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Shopping Cart Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/shoppingcart.css')}}">
+<style>
+	.cart-page {
+		margin: 40px auto;
+	}
+	table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+	.cart-info {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	th{
+		text-align: left;
+		padding: 5px;
+		color: #fff;
+		background: #ff523b;
+		font-weight: normal;
+	}
+	td {
+		padding: 10px 5px;
+		color: grey;
+	}
+	.total-price{
+		display: flex;
+		justify-content: flex-end;
+	}
+	.total-price table{
+		border-top: 3px solid #ff523b;
+		width: 100%;
+		max-width: 350px;
+	}
+	td:last-child, th:last-child {
+		text-align: right;
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+{% include "_getflashmsgshelpers.html" %}
+<div class="container cart-page">
+	<a href="{{ url_for('product') }}">Back to explore other products</a>
+	<br>
+	<h3>Check the products you have selected:</h3>
+	<table id="carttable">
+		<tr>
+			<th>Product</th>
+			<th>Subtotal</th>
+		</tr>
+		{% for product in detail %}
+		<tr>
+			<td>
+				<div class="cart-info">
+					<img src="static/img/images/{{ product[3] }}" alt="{{ product[2] }}" style="width: 100px; height: 100px; margin-right: 10px;">
+					<div>
+						<p>{{ product[1]}} </p>
+						<small>Price: ${{ product[2] }}</small>
+						<br>
+						<a href="/cartdelete?cart={{ product[1] }}" style="color: #ff523b; font-size: 12px;">Remove</a>
+					</div>
+				</div>
+			</td>
+			<td>${{ product[2] }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+
+	<div class="total-price">
+		<table>
+			<tr>
+				<td>Total Price</td>
+				<td>${{ totalPrice }}</td>
+			</tr>
+		</table>
+	</div>
+	<!--a href="/cartorder?cart={{ totalProduct }}" class="btn btn-primary">Order Now</a-->
+</div>
+
+
+{% endblock %}

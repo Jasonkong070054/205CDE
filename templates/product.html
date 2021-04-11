@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Product</title>
+{% endblock %}
+
+{% block content %}
+{% include "_getflashmsgshelpers.html" %}
+<div class="product_content">
+	<h2 class="product_brand">Logitech</h2>
+	<div class="row">
+	{% for product in logitech %}
+        <div class="card col-md-5 col-sm-12" style="width: 20rem; margin: 20px 20px 24px 0; padding: 20px 0 0 0;">
+            <img src="static/img/images/{{ product[5] }}" alt="image" class="card-img-top zoom " style="background-repeat: none; background-size: cover; height: 400px; width:90%; margin: auto; ">
+            <div class="card-body">
+                <h2 class="card-title">{{ product[1] }}</h2>
+                <h3 class="card-text">${{ product[2] }}</h3>
+                <a href="/productdetail?pdtid={{ product[0] }}" class="btn btn-secondary">See Details</a>
+                <a href="/order?pdtid={{ product[0] }}" class="btn btn-primary">Order Now</a>
+                <a href="/cartadd?cart={{ product[0] }}" class="btn btn-success">Add to Shopping Cart</a>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+    <h2 class="product_brand">Razer</h2>
+    <div class="row">
+    {% for product in razer %}
+        <div class="card col-md-5 col-sm-12" style="width: 20rem; margin: 20px 20px 24px 0; padding: 20px 0 0 0;">
+            <img src="static/img/images/{{ product[5] }}" alt="image" class="card-img-top zoom" style="background-repeat: none; background-size: cover; height: 400px; width:90%; margin: auto; ">
+            <div class="card-body">
+                <h2 class="card-title">{{ product[1] }}</h2>
+                <h3 class="card-text">${{ product[2] }}</h3>
+                <a href="/productdetail?pdtid={{ product[0] }}" class="btn btn-secondary">See Details</a>
+                <a href="/order?pdtid={{ product[0] }}" class="btn btn-primary">Order Now</a>
+                <a href="/cartadd?cart={{ product[0] }}" class="btn btn-success">Add to Shopping Cart</a>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+    <h2 class="product_brand">HyperX</h2>
+    <div class="row">
+    {% for product in hyperx %}
+        <div class="card col-md-5 col-sm-12" style="width: 20rem; margin: 20px 20px 24px 0; padding: 20px 0 0 0;">
+            <img src="static/img/images/{{ product[5] }}" alt="image" class="card-img-top zoom" style="background-repeat: none; background-size: cover; height: 400px; width:90%; margin: auto; ">
+            <div class="card-body">
+                <h2 class="card-title">{{ product[1] }}</h2>
+                <h3 class="card-text">${{ product[2] }}</h3>
+                <a href="/productdetail?pdtid={{ product[0] }}" class="btn btn-secondary">See Details</a>
+                <a href="/order?pdtid={{ product[0] }}" class="btn btn-primary">Order Now</a>
+                <a href="/cartadd?cart={{ product[0] }}" class="btn btn-success">Add to Shopping Cart</a>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+    <h2 class="product_brand">SteelSeries</h2>
+    <div class="row">
+    {% for product in steelseries %}
+        <div class="card col-md-5 col-sm-12" style="width: 20rem; margin: 20px 20px 24px 0; padding: 20px 0 0 0;">
+            <img src="static/img/images/{{ product[5] }}" alt="image" class="card-img-top zoom" style="background-repeat: none; background-size: cover; height: 400px; width:90%; margin: auto; ">
+            <div class="card-body">
+                <h2 class="card-title">{{ product[1] }}</h2>
+                <h3 class="card-text">${{ product[2] }}</h3>
+                <a href="/productdetail?pdtid={{ product[0] }}" class="btn btn-secondary">See Details</a>
+                <a href="/order?pdtid={{ product[0] }}" class="btn btn-primary">Order Now</a>
+                <a href="/cartadd?cart={{ product[0] }}" class="btn btn-success">Add to Shopping Cart</a>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}

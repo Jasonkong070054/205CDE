@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>View Customer's Order</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<h1>Customer's Order Information</h1>
+	<table class="table table-dark table-striped">
+		<thead>
+			<tr>
+				<th>Order ID</th>
+		      	<th>Product ID</th>
+		      	<th>Product Name</th>
+		      	<th>Product Price</th>
+		      	<th>User Name</th>
+		      	<th>User Phone Number</th>
+		      	<th>Delivering Address</th>
+		      	<th>Order Received Date</th>
+		    </tr>
+		</thead>
+		<tbody>
+			{% for order in order %}
+		   	<tr>
+		      	<td>{{order[0]}}</td>
+		      	<td>{{order[1]}}</td>
+		      	<td>{{order[2]}}</td>
+		      	<td>{{order[3]}}</td>
+		      	<td>{{order[4]}}</td>
+		      	<td>{{order[5]}}</td>
+		      	<td>{{order[6]}}</td>
+		      	<td>{{order[7]}}</td>
+		      	<td><a href="/deleteorder?orderid={{ order[0] }}" class="btn btn-danger">Delete</a></td>
+		    </tr>
+		    {% endfor %}
+		</tbody>		
+	</table>
+</div>
+
+{% endblock %}
